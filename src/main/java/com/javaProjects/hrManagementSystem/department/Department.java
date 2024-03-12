@@ -1,8 +1,25 @@
 package com.javaProjects.hrManagementSystem.department;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
+@Entity
+@Table
+
 public class Department {
+    // needs explanation
+    @Id
+    @SequenceGenerator(
+            name = "department_sequence",
+            sequenceName = "department_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "department_sequence"
+
+    )
     private Long id;
     private String name;
     //Foreign Key
